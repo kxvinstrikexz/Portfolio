@@ -7,12 +7,11 @@ const __dirname = path.dirname(__filename);
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ['three', '@react-three/fiber', '@react-three/drei'],
   images: {
     unoptimized: true,
   },
   turbopack: {
-    root: path.resolve(__dirname, '..'),
+    root: __dirname,
   },
 };
 
