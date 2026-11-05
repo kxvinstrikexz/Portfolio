@@ -66,24 +66,24 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ projects }) => {
               >
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="relative flex-1 flex flex-col justify-between p-8 sm:p-12 rounded-3xl bg-[#141414] border border-white/[0.08] hover:border-[#fabb02]/40 transition-all duration-500 shadow-xl overflow-hidden group"
+                  className="relative flex-1 flex flex-col justify-between p-6 sm:p-10 md:p-12 rounded-2xl sm:rounded-3xl bg-[#141414] border border-white/[0.08] hover:border-[#fabb02]/40 transition-all duration-500 shadow-xl overflow-hidden group"
                 >
                   {/* Subtle ambient gold illumination on card hover */}
                   <div className="absolute -top-20 -right-20 w-48 h-48 bg-[#fabb02]/5 rounded-full blur-3xl group-hover:bg-[#fabb02]/12 transition-all pointer-events-none" />
 
                   {/* Top Header: Number, Category Pill, Arrow */}
-                  <div className="flex items-center justify-between gap-4 mb-8">
-                    <div className="flex items-center gap-3">
-                      <span className="font-mono text-xl sm:text-2xl font-semibold text-[#fabb02]">
+                  <div className="flex items-center justify-between gap-3 mb-6 sm:mb-8">
+                    <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+                      <span className="font-mono text-lg sm:text-2xl font-semibold text-[#fabb02]">
                         {numStr}
                       </span>
-                      <span className="w-8 h-px bg-white/15 group-hover:w-12 group-hover:bg-[#fabb02]/50 transition-all" />
-                      <span className="text-[11px] font-mono uppercase tracking-widest text-[#a6a6a6] group-hover:text-[#f5f5f0] transition-colors">
+                      <span className="w-6 sm:w-8 h-px bg-white/15 group-hover:w-10 sm:group-hover:w-12 group-hover:bg-[#fabb02]/50 transition-all" />
+                      <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#a6a6a6] group-hover:text-[#f5f5f0] transition-colors">
                         {project.category}
                       </span>
                     </div>
 
-                    <span className="text-base font-mono text-[#a6a6a6] group-hover:text-[#fabb02] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+                    <span className="text-base font-mono text-[#a6a6a6] group-hover:text-[#fabb02] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0">
                       ↗
                     </span>
                   </div>

@@ -45,12 +45,12 @@ export const MoreWorkCta: React.FC<MoreWorkCtaProps> = ({ totalCount, projects }
             {/* Dynamic CTA Button with Total Project Count */}
             <Link
               href="/projects"
-              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#1a1a1a] hover:bg-[#222222] border border-white/15 hover:border-[#fabb02]/50 text-xs font-mono tracking-widest text-[#f5f5f0] hover:text-[#fabb02] transition-all shadow-xl"
+              className="group inline-flex items-center justify-between sm:justify-start gap-3 px-5 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#1a1a1a] hover:bg-[#222222] border border-white/15 hover:border-[#fabb02]/50 text-xs font-mono tracking-wider sm:tracking-widest text-[#f5f5f0] hover:text-[#fabb02] transition-all shadow-xl w-full sm:w-auto"
             >
-              <span className="uppercase font-medium">
-                Browse Complete Projects Directory ({totalCount} Projects)
+              <span className="uppercase font-medium text-left">
+                Browse Projects Directory ({totalCount})
               </span>
-              <span className="text-[#fabb02] group-hover:translate-x-1 transition-transform">
+              <span className="text-[#fabb02] group-hover:translate-x-1 transition-transform shrink-0">
                 →
               </span>
             </Link>

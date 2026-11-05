@@ -89,13 +89,18 @@ export const Navbar: React.FC = () => {
 
           <Link
             href="/projects"
-            className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
-              pathname.startsWith('/projects')
-                ? 'border-[#fabb02] text-[#fabb02] bg-[#fabb02]/10'
-                : 'border-white/15 text-[#f5f5f0] hover:border-[#fabb02]/50 hover:text-[#fabb02]'
+            className={`relative py-1 transition-colors hover:text-[#f5f5f0] flex items-center gap-2 ${
+              pathname.startsWith('/projects') ? 'text-[#f5f5f0] font-medium' : ''
             }`}
           >
-            PROJECTS
+            {pathname.startsWith('/projects') && (
+              <motion.span
+                layoutId="activeNavIndicator"
+                className="w-1.5 h-1.5 rounded-full bg-[#fabb02]"
+                transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+              />
+            )}
+            <span>PROJECTS</span>
           </Link>
         </nav>
 
@@ -133,11 +138,11 @@ export const Navbar: React.FC = () => {
                   <span className="text-[#fabb02]">→</span>
                 </a>
               ))}
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div className="pt-4 border-t border-white/10 flex flex-col gap-4">
                 <Link
                   href="/projects"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-[#fabb02] flex items-center gap-2"
+                  className="text-[#fabb02] flex items-center justify-between text-xs tracking-wider"
                 >
                   <span>ALL PROJECTS DIRECTORY</span>
                   <span>↗</span>

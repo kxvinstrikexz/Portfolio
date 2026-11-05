@@ -1,16 +1,20 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import type { Project } from '../../data/projects/types';
+import { markIntroSeen } from '../../lib/introSession';
 
 interface EditorialCaseStudyProps {
   project: Project;
 }
 
 export const EditorialCaseStudy: React.FC<EditorialCaseStudyProps> = ({ project }) => {
+  useEffect(() => {
+    markIntroSeen();
+  }, []);
   return (
     <article className="min-h-screen pt-32 pb-36 relative overflow-hidden bg-[#0c0c0c] text-[#f5f5f0]">
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
@@ -74,7 +78,7 @@ export const EditorialCaseStudy: React.FC<EditorialCaseStudyProps> = ({ project 
               <span className="text-[#737373] uppercase block mb-1">Core Discipline</span>
               <span className="text-[#f5f5f0]">{project.category}</span>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               {project.github && (
                 <a
                   href={project.github}

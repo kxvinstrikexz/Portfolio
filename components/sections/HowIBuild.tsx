@@ -61,7 +61,7 @@ export const HowIBuild: React.FC = () => {
           <span className="text-xs font-mono uppercase tracking-widest text-[#fabb02] mb-4 block">
             My Journey & Continuous Loop
           </span>
-          <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-sm sm:text-base font-mono tracking-widest text-[#a6a6a6]">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 md:gap-6 text-xs sm:text-sm md:text-base font-mono tracking-wider sm:tracking-widest text-[#a6a6a6]">
             {journeySteps.map((step, idx) => (
               <React.Fragment key={step}>
                 <span className="text-[#f5f5f0] hover:text-[#fabb02] transition-colors">

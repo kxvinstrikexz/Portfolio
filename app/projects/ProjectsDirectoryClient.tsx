@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Project } from '../../data/projects/types';
+import { markIntroSeen } from '../../lib/introSession';
 
 interface ProjectsDirectoryClientProps {
   initialProjects: Project[];
@@ -14,6 +15,10 @@ export const ProjectsDirectoryClient: React.FC<ProjectsDirectoryClientProps> = (
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
+
+  useEffect(() => {
+    markIntroSeen();
+  }, []);
 
   // Dynamically derive unique categories from the project array
   const categories = useMemo(() => {
@@ -110,7 +115,7 @@ export const ProjectsDirectoryClient: React.FC<ProjectsDirectoryClientProps> = (
         </div>
 
         {/* Search Input */}
-        <div className="relative min-w-[260px] sm:min-w-[320px]">
+        <div className="relative w-full md:w-auto md:min-w-[300px]">
           <input
             type="text"
             value={searchQuery}

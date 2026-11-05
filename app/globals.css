@@ -91,3 +91,21 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #fabb02;
 }
+
+/* Golden Light Sweep Keyframe for The KSR Archive Intro */
+@keyframes ksrSweep {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}

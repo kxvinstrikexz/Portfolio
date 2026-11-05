@@ -11,6 +11,7 @@ import { CurrentlyExploring } from '../components/sections/CurrentlyExploring';
 import { Statement } from '../components/sections/Statement';
 import { Contact } from '../components/sections/Contact';
 import { AmbientCanvas } from '../components/ui/AmbientCanvas';
+import { IntroAnimation } from '../components/intro/IntroAnimation';
 
 export const revalidate = 3600; // Static generation with hourly revalidation
 
@@ -31,6 +32,9 @@ export default async function HomePage() {
 
   return (
     <main className="relative min-h-screen bg-[#0c0c0c] text-[#f5f5f0]">
+      {/* 3D Cinematic Brand Intro Overlay */}
+      <IntroAnimation />
+
       {/* Subtle ambient particle canvas */}
       <AmbientCanvas />
 

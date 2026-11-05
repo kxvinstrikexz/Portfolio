@@ -95,11 +95,11 @@ export const WhatIBuild: React.FC = () => {
                 transition={{ duration: 0.75, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
                 className="py-10 first:pt-0 last:pb-0 group"
               >
-                <div className="flex items-start justify-between gap-4 mb-3">
+                <div className="flex flex-wrap sm:flex-nowrap items-baseline justify-between gap-2 mb-3">
                   <span className="font-mono text-xs text-[#fabb02] tracking-widest pt-1">
                     {item.number}
                   </span>
-                  <span className="text-[11px] font-mono text-[#737373] tracking-wide uppercase">
+                  <span className="text-[10px] sm:text-[11px] font-mono text-[#737373] tracking-wide uppercase">
                     {item.tech}
                   </span>
                 </div>

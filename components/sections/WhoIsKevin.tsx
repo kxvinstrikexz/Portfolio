@@ -40,34 +40,46 @@ export const WhoIsKevin: React.FC = () => {
             </div>
 
             {/* Subtle Divider Line with Yellow Accent */}
-            <div className="mt-8 pt-8 border-t border-white/[0.08] w-full max-w-md flex items-center justify-between text-xs font-mono text-[#a6a6a6]">
+            <div className="mt-8 pt-8 border-t border-white/[0.08] w-full max-w-md flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-[#a6a6a6]">
               <span className="uppercase tracking-wider">Focus Areas</span>
               <span className="text-[#fabb02]">Full-Stack · Mobile · AI</span>
             </div>
           </motion.div>
 
-          {/* Right: Organic Frame with Second Authentic Portrait */}
+          {/* Right: Seamless Background-Integrated Editorial Portrait */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 36 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, y: 36 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             className="lg:col-span-5 flex flex-col items-center lg:items-end justify-center"
           >
-            <div className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-[3/4]">
-              {/* Subtle ambient glow */}
-              <div className="absolute -inset-1.5 bg-gradient-to-tr from-[#fabb02]/10 via-transparent to-transparent organic-oval-mask blur-xl pointer-events-none" />
-
-              {/* Organic oval container */}
-              <div className="relative w-full h-full organic-oval-mask overflow-hidden border border-white/15 bg-[#141414] shadow-2xl">
+            <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[380px]">
+              {/* Seamless Masked Portrait — Edge Dissolve via Radial Mask & Perimeter Fades */}
+              <div
+                className="relative w-full select-none"
+                style={{
+                  maskImage:
+                    'radial-gradient(ellipse 75% 82% at 50% 46%, #000 48%, rgba(0,0,0,0.85) 66%, rgba(0,0,0,0.2) 84%, transparent 98%)',
+                  WebkitMaskImage:
+                    'radial-gradient(ellipse 75% 82% at 50% 46%, #000 48%, rgba(0,0,0,0.85) 66%, rgba(0,0,0,0.2) 84%, transparent 98%)',
+                }}
+              >
                 <Image
                   src="/kevin-portrait-glasses.jpg"
-                  alt="Kevin Siv Raj M S Portrait"
-                  fill
-                  className="object-cover object-center filter grayscale contrast-[1.06] hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 768px) 320px, 360px"
+                  alt="Kevin Siv Raj M S — Software Developer"
+                  width={571}
+                  height={1024}
+                  priority
+                  className="w-full h-auto object-contain select-none pointer-events-none filter contrast-[1.04]"
+                  sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 380px"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0c]/60 via-transparent to-transparent pointer-events-none" />
+
+                {/* Perimeter directional gradient blends: merge all 4 image edges into the #0c0c0c background */}
+                <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-[#0c0c0c] to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0c0c0c] via-[#0c0c0c]/80 to-transparent pointer-events-none" />
+                <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-[#0c0c0c] to-transparent pointer-events-none" />
+                <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-[#0c0c0c] to-transparent pointer-events-none" />
               </div>
 
               {/* Editorial metadata arrow label */}
