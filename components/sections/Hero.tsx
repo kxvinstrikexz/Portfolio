@@ -2,33 +2,15 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Galaxy from '../ui/Galaxy';
 
 export const Hero: React.FC = () => {
   return (
     <section
       id="intro"
-      className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden"
+      className="relative min-h-[85vh] flex items-center pt-32 pb-20 overflow-hidden"
     >
-      {/* Full Screen Background Galaxy Component */}
-      <div className="absolute inset-0 w-full h-full pointer-events-auto z-0 overflow-hidden">
-        <Galaxy
-          density={1}
-          glowIntensity={0.5}
-          starSize={1}
-          flareIntensity={1}
-          starSpeed={0.5}
-          mouseRepulsion={true}
-          clickWarp={true}
-          transparent={true}
-          starColors={['#ffffff', '#fabb02', '#ffe699', '#cbd5e1']}
-        />
-        {/* Seamless bottom fade into section 2 */}
-        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#0c0c0c] to-transparent pointer-events-none" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10 pointer-events-none">
-        <div className="max-w-4xl pointer-events-auto">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
+        <div className="max-w-4xl">
           
           {/* Editorial Typography & Identity */}
           <motion.div
