@@ -20,7 +20,7 @@ export const vijayHospital: Project = {
     'Vercel'
   ],
   demo: 'https://vijayhospital.life',
-  demoLabel: 'Click',
+  demoLabel: 'Click Here to Visit ↗',
   client: 'Vijay Hospital, Usilampatti, Madurai, Tamil Nadu',
   role: 'Frontend Developer',
   duration: '05 October 2026 – 30 October 2026',
@@ -44,7 +44,7 @@ export const vijayHospital: Project = {
     'Frontend Development: Engineered a modern single-page architecture using React, Vite, and Tailwind CSS ensuring fast loading and fluid interactions.',
     'UI/UX & Visual Identity: Created a nature-inspired design system featuring calming sage greens, clean off-white backgrounds, and empathetic typography.',
     'Emergency & Contact Workflows: Integrated direct phone dialers, hospital hours, and embedded Google Maps for straightforward patient navigation.',
-    'Deployment & Delivery: Configured production build optimizations and deployed to Vercel connected to the official domain https://vijayhospital.life.'
+    'Deployment & Delivery: Configured production build optimizations and deployed to Vercel connected to the official hospital domain.'
   ],
   designApproach:
     'The website employs a nature-inspired visual identity featuring calming sage green accents, clean typography, and a spacious layout. Departing from cold medical templates, the aesthetic focuses on empathy, clarity, and reassurance. Urgent information—such as emergency triage numbers, 24/7 pharmacy availability, and hospital timings—is given prime visual hierarchy, followed by comprehensive doctor qualifications, clinical departments, and facility overviews.',
@@ -64,6 +64,6 @@ export const vijayHospital: Project = {
   challenges:
     'Organizing extensive clinical service information and departmental schedules into an uncluttered, accessible interface while ensuring fast load times on regional mobile networks.',
   outcome:
-    'Successfully completed and delivered the professional hospital landing page to Vijay Hospital on 30 October 2026. The website is live at https://vijayhospital.life, providing a seamless digital point of care for the community.'
+    'Successfully completed and delivered the professional hospital landing page to Vijay Hospital on 30 October 2026, providing a seamless digital point of care for the community.'
 };
 

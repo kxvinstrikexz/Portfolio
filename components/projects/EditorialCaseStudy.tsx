@@ -98,8 +98,7 @@ export const EditorialCaseStudy: React.FC<EditorialCaseStudyProps> = ({ project 
                   rel="noopener noreferrer"
                   className="px-4 py-2 rounded-full bg-[#fabb02] text-[#0c0c0c] text-xs font-mono tracking-wider font-semibold uppercase hover:bg-[#ffd147] transition-all shadow-md hover:shadow-[#fabb02]/20 inline-flex items-center gap-1.5"
                 >
-                  <span>{project.demoLabel?.replace(/↗/g, '').trim() || 'Click'}</span>
-                  <span aria-hidden="true">↗</span>
+                  <span>{project.demoLabel || 'Click Here to Visit ↗'}</span>
                 </a>
               )}
             </div>
@@ -178,9 +177,17 @@ export const EditorialCaseStudy: React.FC<EditorialCaseStudyProps> = ({ project 
                         <span className="text-[#a6a6a6]">Status:</span>
                         <span className="text-[#10b981]">Delivered &amp; Live</span>
                       </div>
-                      <div className="flex justify-between">
-                        <span className="text-[#a6a6a6]">Domain:</span>
-                        <span className="text-[#f5f5f0]">vijayhospital.life</span>
+                      <div className="flex justify-between items-center">
+                        <span className="text-[#a6a6a6]">Official Site:</span>
+                        <a
+                          href="https://vijayhospital.life"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#fabb02] hover:text-[#ffd147] transition-colors inline-flex items-center gap-1 font-mono text-[11px]"
+                        >
+                          <span>Click Here to Visit</span>
+                          <span aria-hidden="true">↗</span>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -253,8 +260,7 @@ export const EditorialCaseStudy: React.FC<EditorialCaseStudyProps> = ({ project 
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#fabb02] text-[#0c0c0c] text-xs font-mono font-semibold tracking-wider uppercase hover:bg-[#ffd147] transition-all shadow-lg hover:shadow-[#fabb02]/25"
                   >
-                    <span>{project.demoLabel?.replace(/↗/g, '').trim() || 'Click'}</span>
-                    <span aria-hidden="true">↗</span>
+                    <span>{project.demoLabel || 'Click Here to Visit ↗'}</span>
                   </a>
                 </div>
               )}
