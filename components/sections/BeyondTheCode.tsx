@@ -63,7 +63,7 @@ export const BeyondTheCode: React.FC = () => {
                 className="flex items-center gap-4 mb-12 sm:mb-16"
               >
                 <span className="text-xs font-mono tracking-widest text-[#fabb02] uppercase font-semibold">
-                  {meta.number} ── {meta.title}
+                  {meta.title}
                 </span>
                 <span className="h-px flex-1 bg-white/[0.06]" />
               </motion.div>

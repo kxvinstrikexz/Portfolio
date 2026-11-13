@@ -5,19 +5,16 @@ export * from './types';
 export const categoryMetadata: ExperienceCategoryMeta[] = [
   {
     type: 'hackathon',
-    number: '01',
     title: 'HACKATHONS',
     singularLabel: 'HACKATHON',
   },
   {
     type: 'workshop',
-    number: '02',
     title: 'WORKSHOPS',
     singularLabel: 'WORKSHOP',
   },
   {
     type: 'internship',
-    number: '03',
     title: 'INTERNSHIPS',
     singularLabel: 'INTERNSHIP',
   },

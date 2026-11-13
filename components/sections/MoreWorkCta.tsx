@@ -79,7 +79,7 @@ export const MoreWorkCta: React.FC<MoreWorkCtaProps> = ({ totalCount, projects }
                       {p.title}
                     </h3>
                     <p className="text-[11px] font-mono text-[#737373] tracking-wide uppercase">
-                      {p.category} · {p.technologies.slice(0, 3).join(' · ')}
+                      {p.category} · {p.technologies.filter((tech) => !p.category.toLowerCase().includes(tech.toLowerCase())).slice(0, 3).join(' · ')}
                     </p>
                   </div>
                 </div>

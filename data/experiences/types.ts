@@ -38,7 +38,7 @@ export type Experience = HackathonExperience | WorkshopExperience | InternshipEx
 
 export interface ExperienceCategoryMeta {
   type: ExperienceType;
-  number: string;
+  number?: string;
   title: string;
   singularLabel: string;
 }

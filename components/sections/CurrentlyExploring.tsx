@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const techCategories = [
   {
     category: 'PROGRAMMING',
-    items: ['TypeScript', 'JavaScript', 'Python', 'Dart', 'Java'],
+    items: ['Java', 'Python', 'C', 'JavaScript', 'Dart'],
   },
   {
     category: 'WEB ARCHITECTURE',
@@ -14,7 +14,7 @@ const techCategories = [
   },
   {
     category: 'MOBILE ENGINEERING',
-    items: ['Flutter', 'Dart', 'Cross-Platform State Management', 'Native UI Layouts'],
+    items: ['Flutter', 'Cross-Platform State Management', 'Native UI Layouts'],
   },
   {
     category: 'AI & INTELLIGENCE',
