@@ -5,10 +5,11 @@ import { voiceNoteTaking } from './voice-note-taking';
 import { habitflow } from './habitflow';
 import { intellex } from './intellex';
 import { civicconnect } from './civicconnect';
+import { vijayHospital } from './vijay-hospital';
 import type { Project } from './types';
 
 export * from './types';
-export { habitflow, onlinePollingSystem, campusEventManagement, studyflowAi, voiceNoteTaking, intellex, civicconnect };
+export { habitflow, onlinePollingSystem, campusEventManagement, studyflowAi, voiceNoteTaking, intellex, civicconnect, vijayHospital };
 
 // Central collection of all projects
 export const allProjects: Project[] = [
@@ -18,7 +19,8 @@ export const allProjects: Project[] = [
   voiceNoteTaking,
   habitflow,
   intellex,
-  civicconnect
+  civicconnect,
+  vijayHospital
 ];
 
 

@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Project } from '../../data/projects/types';
 import { markIntroSeen } from '../../lib/introSession';
@@ -200,6 +201,20 @@ export const ProjectsDirectoryClient: React.FC<ProjectsDirectoryClientProps> = (
                           ↗
                         </span>
                       </div>
+
+                      {/* Optional Project Website Preview Visual */}
+                      {project.image && !project.image.endsWith('cover.svg') && (
+                        <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-6 border border-white/10 bg-[#1a1a1a]">
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            fill
+                            className="object-cover object-top group-hover:scale-105 transition-transform duration-700 filter brightness-95 group-hover:brightness-100"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 380px"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/80 via-transparent to-transparent pointer-events-none" />
+                        </div>
+                      )}
 
                       {/* Project Title */}
                       <h3 className="font-editorial text-2xl sm:text-3xl font-medium tracking-tight text-[#f5f5f0] group-hover:text-[#fabb02] transition-colors leading-[1.15] mb-3">

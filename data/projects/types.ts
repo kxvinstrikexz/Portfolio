@@ -18,6 +18,10 @@ export interface Project {
   gallery?: string[];
   github?: string;
   demo?: string;
+  demoLabel?: string;
+  client?: string;
+  role?: string;
+  duration?: string;
   featured: boolean;
   status?: string;
   year?: string | number;
@@ -28,4 +32,10 @@ export interface Project {
   challenges?: string;
   outcome?: string;
   accentColor?: string;
+  objectives?: string[];
+  responsibilities?: string[];
+  designApproach?: string;
+  deliveryImage?: string;
+  deliveryCaption?: string;
+  tiltedCardHero?: boolean;
 }

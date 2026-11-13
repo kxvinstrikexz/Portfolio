@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import type { Project } from '../../data/projects/types';
 import { markIntroSeen } from '../../lib/introSession';
+import TiltedCard, { TiltedCardLayer } from '../ui/TiltedCard';
 
 interface EditorialCaseStudyProps {
   project: Project;
@@ -95,17 +96,118 @@ export const EditorialCaseStudy: React.FC<EditorialCaseStudyProps> = ({ project 
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-1.5 rounded-full bg-[#fabb02] text-[#0c0c0c] text-xs font-mono tracking-wider font-semibold uppercase hover:bg-[#ffd147] transition-all"
+                  className="px-4 py-2 rounded-full bg-[#fabb02] text-[#0c0c0c] text-xs font-mono tracking-wider font-semibold uppercase hover:bg-[#ffd147] transition-all shadow-md hover:shadow-[#fabb02]/20 inline-flex items-center gap-1.5"
                 >
-                  Live Demo ↗
+                  <span>{project.demoLabel?.replace(/↗/g, '').trim() || 'Click'}</span>
+                  <span aria-hidden="true">↗</span>
                 </a>
               )}
             </div>
           </div>
+
+          {/* Client, Role & Duration Secondary Metadata */}
+          {(project.client || project.role || project.duration) && (
+            <div className="pt-5 border-t border-white/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
+              {project.client && (
+                <div>
+                  <span className="text-[#737373] uppercase block mb-1">Client</span>
+                  <span className="text-[#f5f5f0] font-sans">{project.client}</span>
+                </div>
+              )}
+              {project.role && (
+                <div>
+                  <span className="text-[#737373] uppercase block mb-1">Role</span>
+                  <span className="text-[#fabb02]">{project.role}</span>
+                </div>
+              )}
+              {project.duration && (
+                <div>
+                  <span className="text-[#737373] uppercase block mb-1">Duration</span>
+                  <span className="text-[#a6a6a6]">{project.duration}</span>
+                </div>
+              )}
+            </div>
+          )}
         </motion.div>
 
-        {/* Hero Visual (Displayed only for real screenshots, excluding synthetic cover SVGs) */}
-        {project.image && !project.image.endsWith('cover.svg') && (
+        {/* Hero Visual: Interactive 3D Tilted Card Presentation for Vijay Hospital / TiltedCard Hero, or standard editorial hero */}
+        {project.id === 'vijay-hospital' || project.tiltedCardHero ? (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 32 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.2 }}
+            className="flex flex-col items-center justify-center mb-24 relative"
+          >
+            <TiltedCard
+              imageSrc={project.image || project.deliveryImage || '/vijay-hospital-delivery.jpg'}
+              altText={project.title}
+              captionText="Vijay Hospital — Client Project Delivery"
+              containerHeight="min(680px, 85vh)"
+              containerWidth="100%"
+              imageHeight="min(600px, 78vh)"
+              imageWidth="min(450px, 86vw)"
+              rotateAmplitude={14}
+              scaleOnHover={1.04}
+              glare={0.45}
+              shadow={0.6}
+              radius={20}
+              showTooltip={true}
+              backContent={
+                <div className="w-full h-full p-6 sm:p-8 flex flex-col justify-between bg-[#141414] border border-[#fabb02]/30 rounded-[20px] text-left">
+                  <div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#fabb02]/30 bg-[#fabb02]/10 text-[#fabb02] text-[10px] font-mono tracking-wider uppercase mb-4">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#fabb02]" />
+                      <span>Project Verification</span>
+                    </div>
+                    <h4 className="font-editorial text-2xl sm:text-3xl text-[#f5f5f0] mb-2 font-medium">
+                      Vijay Hospital
+                    </h4>
+                    <p className="font-sans text-xs sm:text-sm text-[#a6a6a6] leading-relaxed mb-6 font-light">
+                      Official client delivery &amp; project handover in Usilampatti, Madurai, Tamil Nadu.
+                    </p>
+                    <div className="space-y-2.5 text-xs font-mono text-[#737373] border-t border-white/[0.08] pt-4">
+                      <div className="flex justify-between">
+                        <span className="text-[#a6a6a6]">Duration:</span>
+                        <span className="text-[#f5f5f0]">05 Oct – 30 Oct 2026</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-[#a6a6a6]">Role:</span>
+                        <span className="text-[#fabb02]">Frontend Developer</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-[#a6a6a6]">Status:</span>
+                        <span className="text-[#10b981]">Delivered &amp; Live</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-[#a6a6a6]">Domain:</span>
+                        <span className="text-[#f5f5f0]">vijayhospital.life</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between text-[11px] font-mono text-[#fabb02] tracking-wider uppercase">
+                    <span>Click to flip back</span>
+                    <span>↺</span>
+                  </div>
+                </div>
+              }
+            >
+              <TiltedCardLayer depth={28}>
+                <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none rounded-b-[20px]">
+                  <span className="text-[10px] font-mono tracking-widest text-[#fabb02] uppercase block mb-1">
+                    Client Project Delivery
+                  </span>
+                  <h3 className="font-editorial text-lg sm:text-xl text-[#f5f5f0] font-medium leading-snug">
+                    Vijay Hospital Handover
+                  </h3>
+                </div>
+              </TiltedCardLayer>
+            </TiltedCard>
+            <p className="mt-4 text-xs font-mono tracking-wider text-[#737373] uppercase text-center flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#fabb02]/60 animate-pulse" />
+              <span>Interactive 3D Card · Tilt to explore · Click to flip details</span>
+            </p>
+          </motion.div>
+        ) : project.image && !project.image.endsWith('cover.svg') ? (
           <motion.div
             initial={{ opacity: 0, scale: 0.98, y: 32 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -122,7 +224,7 @@ export const EditorialCaseStudy: React.FC<EditorialCaseStudyProps> = ({ project 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0c]/70 via-transparent to-transparent pointer-events-none" />
           </motion.div>
-        )}
+        ) : null}
 
         {/* Case Study Detailed Body Sections */}
         <div className="space-y-20 divide-y divide-white/[0.08]">
@@ -141,6 +243,81 @@ export const EditorialCaseStudy: React.FC<EditorialCaseStudyProps> = ({ project 
               </h2>
               <div className="font-sans text-base sm:text-lg text-[#a6a6a6] font-light leading-relaxed max-w-3xl space-y-4">
                 <p>{project.fullDescription}</p>
+              </div>
+
+              {project.demo && (
+                <div className="pt-6">
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#fabb02] text-[#0c0c0c] text-xs font-mono font-semibold tracking-wider uppercase hover:bg-[#ffd147] transition-all shadow-lg hover:shadow-[#fabb02]/25"
+                  >
+                    <span>{project.demoLabel?.replace(/↗/g, '').trim() || 'Click'}</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              )}
+            </motion.section>
+          )}
+
+          {/* Project Objectives & Responsibilities */}
+          {(project.objectives || project.responsibilities) && (
+            <motion.section
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.8 }}
+              className="pt-16 grid grid-cols-1 md:grid-cols-2 gap-12"
+            >
+              {project.objectives && project.objectives.length > 0 && (
+                <div className="space-y-4">
+                  <h3 className="font-editorial text-2xl text-[#f5f5f0] font-medium tracking-tight">
+                    Project Objectives
+                  </h3>
+                  <ul className="space-y-3 font-sans text-sm sm:text-base text-[#a6a6a6] font-light leading-relaxed">
+                    {project.objectives.map((obj, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="text-[#fabb02] font-mono text-xs pt-1">↳</span>
+                        <span>{obj}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {project.responsibilities && project.responsibilities.length > 0 && (
+                <div className="space-y-4 border-l border-white/[0.1] pl-6 md:pl-8">
+                  <h3 className="font-editorial text-2xl text-[#f5f5f0] font-medium tracking-tight">
+                    My Responsibilities
+                  </h3>
+                  <ul className="space-y-3 font-sans text-sm sm:text-base text-[#a6a6a6] font-light leading-relaxed">
+                    {project.responsibilities.map((resp, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="text-[#fabb02] font-mono text-xs pt-1">↳</span>
+                        <span>{resp}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </motion.section>
+          )}
+
+          {/* Design Approach */}
+          {project.designApproach && (
+            <motion.section
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.8 }}
+              className="pt-16"
+            >
+              <h2 className="text-xs font-mono uppercase tracking-widest text-[#fabb02] mb-4">
+                Design Approach
+              </h2>
+              <div className="font-sans text-base sm:text-lg text-[#a6a6a6] font-light leading-relaxed max-w-3xl">
+                <p>{project.designApproach}</p>
               </div>
             </motion.section>
           )}
@@ -306,6 +483,46 @@ export const EditorialCaseStudy: React.FC<EditorialCaseStudyProps> = ({ project 
                   </p>
                 </div>
               )}
+            </motion.section>
+          )}
+
+          {/* Client Project Delivery Section (Displayed if not already presented in the Hero) */}
+          {project.deliveryImage && project.id !== 'vijay-hospital' && !project.tiltedCardHero && (
+            <motion.section
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.8 }}
+              className="pt-16 space-y-6"
+            >
+              <div>
+                <span className="text-xs font-mono uppercase tracking-widest text-[#fabb02] block mb-2">
+                  Client Verification
+                </span>
+                <h2 className="font-editorial text-2xl sm:text-3xl font-medium text-[#f5f5f0] tracking-tight">
+                  CLIENT PROJECT DELIVERY
+                </h2>
+              </div>
+
+              <div className="relative w-full max-w-xl mx-auto rounded-2xl overflow-hidden border border-white/15 bg-[#141414] shadow-2xl">
+                <div className="relative w-full aspect-[768/1024]">
+                  <Image
+                    src={project.deliveryImage}
+                    alt="Vijay Hospital Client Project Delivery Certificate"
+                    fill
+                    className="object-contain object-center"
+                    sizes="(max-width: 768px) 100vw, 600px"
+                  />
+                </div>
+                {project.deliveryCaption && (
+                  <div className="p-4 sm:p-5 bg-[#121212] border-t border-white/[0.08] flex items-start gap-3">
+                    <span className="text-[#fabb02] font-mono text-sm pt-0.5">↳</span>
+                    <p className="font-sans text-xs sm:text-sm text-[#d4d4d4] font-light italic leading-relaxed">
+                      &ldquo;{project.deliveryCaption}&rdquo;
+                    </p>
+                  </div>
+                )}
+              </div>
             </motion.section>
           )}
 
