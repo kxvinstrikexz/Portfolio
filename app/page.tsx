@@ -6,6 +6,7 @@ import { WhatIBuild } from '../components/sections/WhatIBuild';
 import { SelectedWork } from '../components/sections/SelectedWork';
 import { MoreWorkCta } from '../components/sections/MoreWorkCta';
 import { BeyondTheCode } from '../components/sections/BeyondTheCode';
+import { Achievements } from '../components/sections/Achievements';
 import { HowIBuild } from '../components/sections/HowIBuild';
 import { CurrentlyExploring } from '../components/sections/CurrentlyExploring';
 import { Statement } from '../components/sections/Statement';
@@ -56,7 +57,10 @@ export default async function HomePage() {
       {/* 06 — BEYOND THE CODE */}
       <BeyondTheCode />
 
-      {/* 07 — HOW I BUILD & MY JOURNEY */}
+      {/* 07 — ACHIEVEMENTS */}
+      <Achievements />
+
+      {/* 08 — HOW I BUILD & MY JOURNEY */}
       <HowIBuild />
 
       {/* 08 — CURRENTLY EXPLORING & WHAT I WORK WITH */}
