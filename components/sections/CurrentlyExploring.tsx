@@ -58,7 +58,7 @@ export const CurrentlyExploring: React.FC = () => {
             className="lg:col-span-5"
           >
             <span className="text-xs font-mono uppercase tracking-widest text-[#fabb02] mb-3 block">
-              08 / Technical Foundations
+              09 / Technical Foundations
             </span>
             <h2 className="font-editorial text-4xl sm:text-6xl font-medium tracking-tight text-[#f5f5f0] leading-[1.08] mb-6">
               What I <br />
@@ -105,7 +105,7 @@ export const CurrentlyExploring: React.FC = () => {
               className="lg:col-span-5"
             >
               <span className="text-xs font-mono uppercase tracking-widest text-[#fabb02] mb-3 block">
-                09 / Horizon
+                10 / Horizon
               </span>
               <h3 className="font-editorial text-3xl sm:text-5xl font-medium tracking-tight text-[#f5f5f0] leading-[1.1] mb-4">
                 Currently <br />

@@ -63,13 +63,13 @@ export default async function HomePage() {
       {/* 08 — HOW I BUILD & MY JOURNEY */}
       <HowIBuild />
 
-      {/* 08 — CURRENTLY EXPLORING & WHAT I WORK WITH */}
+      {/* 09 & 10 — TECHNICAL FOUNDATIONS & CURRENTLY EXPLORING */}
       <CurrentlyExploring />
 
-      {/* 09 — PERSONAL PHILOSOPHY */}
+      {/* PERSONAL PHILOSOPHY */}
       <Statement />
 
-      {/* 10 — CONTACT */}
+      {/* 11 — CONTACT */}
       <Contact />
     </main>
   );

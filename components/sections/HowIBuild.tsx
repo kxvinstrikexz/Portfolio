@@ -85,7 +85,7 @@ export const HowIBuild: React.FC = () => {
             className="lg:col-span-5"
           >
             <span className="text-xs font-mono uppercase tracking-widest text-[#fabb02] mb-3 block">
-              07 / Engineering Philosophy
+              08 / Engineering Philosophy
             </span>
             <h2 className="font-editorial text-4xl sm:text-6xl font-medium tracking-tight text-[#f5f5f0] leading-[1.08] mb-6">
               How <br />

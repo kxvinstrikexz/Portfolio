@@ -22,7 +22,7 @@ export const Contact: React.FC = () => {
           >
             <div className="flex flex-wrap items-center gap-4 mb-6">
               <span className="text-xs font-mono uppercase tracking-widest text-[#fabb02] block">
-                10 / Initiate Dialogue
+                11 / Initiate Dialogue
               </span>
             </div>
 
