@@ -207,11 +207,11 @@ export const Achievements: React.FC = () => {
                 </div>
               </div>
 
-              {/* 2. Patent Officers */}
+              {/* 2. Patent Filing Coordination */}
               <div className="p-6 rounded-2xl bg-[#171717] border border-white/[0.06] flex flex-col justify-between">
                 <div>
                   <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-white/[0.04] text-[#fabb02] text-[10px] font-mono tracking-wider uppercase font-semibold mb-3">
-                    Patent Officers
+                    Patent Filing Coordination
                   </div>
                   <ul className="space-y-1 mb-2">
                     <li className="font-editorial text-lg text-[#f5f5f0] font-medium">
@@ -221,12 +221,12 @@ export const Achievements: React.FC = () => {
                       Mrs. R. Eswari
                     </li>
                   </ul>
-                  <p className="font-sans text-xs text-[#737373] font-light">
-                    IP Drafting, InPASS Compliance &amp; Regulatory Filing
+                  <p className="font-sans text-xs text-[#737373] font-light leading-relaxed">
+                    Special thanks to Mr. D. Edwin Antony Raj and Mrs. R. Eswari for their valuable support and assistance throughout the VisionX patent filing process.
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-white/[0.04] text-[10px] font-mono text-[#a6a6a6]">
-                  Role: Patent Officers
+                  Support: Patent Filing Coordination
                 </div>
               </div>
 
